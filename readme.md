@@ -1,0 +1,1 @@
+This is my 4th project this one was difficult but I had a good interesting time with this project I can also see that my CSS is getting a bit better, and on my Javascript I had also learned more syntax because of this project it was fun learning those syntaxes, I expect to learn and improve with more projects in the future. 
