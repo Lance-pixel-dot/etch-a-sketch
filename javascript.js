@@ -1,10 +1,14 @@
 const container = document.querySelector('#container');
 const changeSize = document.querySelector('.change-size');
 const reset = document.querySelector('.reset');
+const body = document.querySelector('body');
 
 let draw = false;
 
 let divSize = 16;
+
+let rgb;
+let opacity = 10;
 
 function createDiv(){
 
@@ -14,13 +18,17 @@ function createDiv(){
 
         div.addEventListener('mouseenter', () => {
             if(!draw) return;
-            div.style.backgroundColor = 'black';
+            randomColor();
+            opacity === 100 ? opacity = 10 : opacity += 10;
+            div.style.backgroundColor = rgb;
         });
 
         div.addEventListener('mousedown', () => {
-            div.style.backgroundColor = 'black';
+            randomColor();
+            opacity === 100 ? opacity = 10 : opacity += 10;
+            div.style.backgroundColor = rgb;
         });
-        
+
     }
 
 }
@@ -50,5 +58,12 @@ reset.addEventListener('click', () => {
     container.textContent = '';
     createDiv();
 });
+
+function randomColor(){
+    let red = Math.floor(Math.random() * 256);
+    let green = Math.floor(Math.random() * 256);
+    let blue = Math.floor(Math.random() * 256);
+    rgb = `rgb(${red}, ${green}, ${blue}, ${opacity}%)`;
+}
 
 createDiv();
