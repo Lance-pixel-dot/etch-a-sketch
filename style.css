@@ -29,12 +29,22 @@ div{
     flex-wrap: wrap;
 }
 .title{
-    margin-top: 10px;
+    margin: 10px auto;
+    font-size: 50px;
 }
 button{
-    margin-top: 10px;
     font-size: 30px;
     padding: 10px;
     border-radius: 10px;
     font-weight: bold;
-}   
+    cursor: pointer;
+} 
+.button-container{
+    display: flex;
+    width: 500px;
+    margin: 10px auto;
+    height: auto;
+    justify-content: space-around;
+    align-content: center;
+    border: 1px;
+}
