@@ -1,4 +1,5 @@
 const container = document.querySelector('#container');
+const actualContainer = document.querySelector('.container-of-actual-div');
 const changeSize = document.querySelector('.change-size');
 const reset = document.querySelector('.reset');
 const body = document.querySelector('body');
@@ -12,9 +13,13 @@ let opacity = 10;
 
 function createDiv(){
 
+    const size = 1000 / divSize;
+
     for(let i = 0; i < divSize * divSize; i++){
         let div = document.createElement('div');
-        container.appendChild(div);
+        actualContainer.appendChild(div);
+        div.style.width = `${size}px`;
+        div.style.height = `${size}px`;
 
         div.addEventListener('mouseenter', () => {
             if(!draw) return;
@@ -47,15 +52,15 @@ changeSize.addEventListener('click', () => {
     if(divSize > 100){
         alert('Size must not be above 100')
     }else if(divSize <= 0){
-        alert('Size must no be empty')
+        alert('Size must not be empty')
     }else{
-        container.textContent = '';
+        actualContainer.textContent = '';
         createDiv();
     }
 });
 
 reset.addEventListener('click', () => {
-    container.textContent = '';
+    actualContainer.textContent = '';
     createDiv();
 });
 
